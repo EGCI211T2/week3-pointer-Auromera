@@ -5,8 +5,8 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    int *pa, *pb, i, temp, *p;
-    int n;
+  int *pa, *pb, i, temp, *p;
+   /*  int n;
 
     cout << "How many numbers? ";
     cin >> n;
@@ -19,6 +19,20 @@ int main(int argc, char *argv[]) {
         cout << "Input no. ";
         cin >> pa[i];
     }
+*/
+ int n =argc-1;
+
+  pa=new int[n];
+  p = pa;
+
+  for(i=0;i<n;i++){
+
+    *pa=atoi(argv[i+1]);
+
+    pa++;
+
+  }
+
 
     // Reset pointer to beginning for printing
     pa = p;
@@ -30,7 +44,7 @@ int main(int argc, char *argv[]) {
     cout << setw(3) << *pa << endl;  // last element
 
     // Reverse using pointers
-    pb = pa;         // pb at last element (current pa is at end)
+    pb = p + (n - 1);        // pb at last element (current pa is at end)
     pa = p;          // reset pa to first element
 
     for (i = 0; i < n / 2; i++) {
