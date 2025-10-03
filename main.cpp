@@ -33,19 +33,17 @@ int main(int argc, char *argv[]) {
 
   }
 
-
-    // Reset pointer to beginning for printing
     pa = p;
 
     cout << "Original: ";
     for (i = 0; i < n - 1; i++, pa++) {
         cout << setw(3) << *pa;
     }
-    cout << setw(3) << *pa << endl;  // last element
+    cout << setw(3) << *pa << endl;  
 
-    // Reverse using pointers
-    pb = p + (n - 1);        // pb at last element (current pa is at end)
-    pa = p;          // reset pa to first element
+    
+    pb = p + (n - 1);        
+    pa = p;          
 
     for (i = 0; i < n / 2; i++) {
         temp = *pa;
@@ -55,7 +53,7 @@ int main(int argc, char *argv[]) {
         pb--;
     }
 
-    // Reset pointer for output
+    
     pa = p;
 
     cout << "Reversed: ";
@@ -64,7 +62,7 @@ int main(int argc, char *argv[]) {
     }
     cout << setw(3) << *pa << endl;
 
-    delete[] p;  // safely delete the allocated memory
+    delete[] p;  
 
     return 0;
 }
